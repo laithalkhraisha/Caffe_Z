@@ -7,6 +7,7 @@ function myFunction() {
    person = prompt("Please enter your name:", "Name");
   
     text = person;
+    getgender()
   }
  
   
@@ -14,9 +15,14 @@ function myFunction() {
 
 let gender="";
 let text2="";
-function myFunction2() {
+function getgender() {
   
     gender = prompt("Please enter your gender:", "MALE");
+    while(gender.toLowerCase()!="male" && gender.toLowerCase()!="female"){
+      gender = prompt("Please enter your gender correctly:", "MALE");
+     
+    }
+
   if (gender.toLowerCase() == "male") {
     text2 = "MR";
     alert("Hello  "+text2+"  "+person);
@@ -34,9 +40,10 @@ function myFunction2() {
   
   
 }
+let drtype="";
 function myFunction3() {
   
-   prompt("what Do you drink a hot drink or a cold drink?", "hot");
+ drtype=prompt("what Do you drink a hot drink or a cold drink?", "hot");
  
    
  }
@@ -45,7 +52,12 @@ function myFunction3() {
   
     drink = prompt("what name of drink you want?", "Tea");
  alert("your drink is getting prepared ....");
-   console.log(person+"   " +drink);
+   
+
+   const order=[person,gender,drtype,drink];
+   for(let i=0;i<order.length;i++){
+    console.log(order[i]);
+   };
  }
 
 
